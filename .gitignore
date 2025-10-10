@@ -1,0 +1,16 @@
+*
+!index.html
+
+# Frontend assets
+!css/
+!css/*.css
+!js/
+!js/*.js
+
+# Data files
+!data/
+!data/*.json
+
+# GitHub configs
+!.gitignore
+!.github/

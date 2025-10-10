@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Product List",
+    "url": "https://budhi-halim.github.io/pl-isi"
+  },
+  {
+    "name": "Price Calculator",
+    "url": "https://budhi-halim.github.io/price"
+  },
+  {
+    "name": "Exchange Rate",
+    "url": "https://budhi-halim.github.io/exchange-rate/data/today.json"
+  },
+  {
+    "name": "Sample Request",
+    "url": "https://budhi-halim.github.io/general-database/data/sample_requests.json"
+  },
+  {
+    "name": "Stock Request",
+    "url": "https://budhi-halim.github.io/general-database/data/stock_requests.json"
+  },
+  {
+    "name": "Sales Order",
+    "url": "https://budhi-halim.github.io/general-database/data/sales_orders.json"
+  }
+]
