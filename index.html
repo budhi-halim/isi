@@ -3,11 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>App Grid</title>
+  <title>Islandsun Apps</title>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+<!-- put this immediately inside <body>, before the header/container -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute; left:0; top:0; pointer-events:none; opacity:0;">
+  <defs>
+    <!-- Squircle path (100x100 viewBox) -->
+    <path id="squircle-shape" d="M50,0 C20,0 0,20 0,50 C0,80 20,100 50,100 C80,100 100,80 100,50 C100,20 80,0 50,0 Z" />
+
+    <!-- Gradient for the icon background (uses CSS variables below) -->
+    <linearGradient id="icon-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--icon-top)" />
+      <stop offset="100%" stop-color="var(--icon-bottom)" />
+    </linearGradient>
+
+    <!-- Subtle gloss overlay -->
+    <linearGradient id="icon-gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0.06"/>
+      <stop offset="0.45" stop-color="white" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Clean drop shadow that follows the vector shape -->
+    <filter id="icon-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+</svg>
+
+
   <header>
     <h1>Apps</h1>
     <div class="darkmode-toggle">
