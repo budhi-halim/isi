@@ -29,6 +29,7 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
   --shadow-lg: 0 4px 20px rgba(0,0,0,0.2);
 
+  --hover-translate-y: 6px;
   --transition-normal: 0.6s ease;
 }
 
@@ -45,7 +46,7 @@ body.dark {
 
   --shadow-sm: 0 2px 6px rgba(255,255,255,0.08);
   --shadow-md: 0 4px 12px rgba(255,255,255,0.06);
-  --shadow-lg: 0 6px 20px rgba(255,255,255,0.08);
+  --shadow-lg: 0 0 20px rgba(255,255,255,0.2);
 }
 
 /* ---------------------------
@@ -170,7 +171,8 @@ h1 {
   justify-content: center;
   width: 86px;
   height: 86px;
-  border-radius: 18px;
+  border-radius: var(--radius-full);
+  corner-shape: squircle;
   background: linear-gradient(180deg, var(--color-white), var(--color-primary-light));
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--color-border-light);
@@ -193,8 +195,12 @@ body.dark .app-link {
 }
 
 .app-item:hover .app-link {
-  transform: translateY(-6px);
+  transform: translateY(calc(-1 * var(--hover-translate-y)));
   box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}
+
+body.dark .app-item:hover .app-link {
+  box-shadow: 0 var(--hover-translate-y) 20px rgba(255,255,255,0.2);
 }
 
 /* label */
@@ -208,9 +214,18 @@ body.dark .app-link {
 
 /* small labels on small width */
 @media (max-width: 420px) {
-  .app-link { width: 72px; height: 72px; border-radius: 16px; font-size: 20px; }
-  .app-item { max-width: 100px; gap: 6px; }
-  .app-label { font-size: 0.85rem; }
+  .app-link {
+    width: 72px;
+    height: 72px;
+    font-size: 20px;
+  }
+  .app-item {
+    max-width: 100px;
+    gap: 6px;
+  }
+  .app-label {
+    font-size: 0.85rem;
+  }
 }
 
 /* Adjust icon and label sizing for large screens */
@@ -218,7 +233,6 @@ body.dark .app-link {
   .app-link {
     width: 92px;
     height: 92px;
-    border-radius: 20px;
     font-size: 26px;
   }
   .app-label {
