@@ -24,15 +24,11 @@
     "url": "https://budhi-halim.github.io/general-database/data/sales_orders.json"
   },
   {
-    "name": "XLSX Compiler",
-    "url": "https://budhi-halim.github.io/xlsx-compiler"
-  },
-  {
-    "name": "Multi Replacement",
-    "url": "https://docs.google.com/spreadsheets/d/1SY6PUwI4T2JMESNHQnPfDGhcMe7bLN210ZI-lC6PtHo/edit?usp=sharing"
-  },
-  {
     "name": "Sales Report",
     "url": "https://budhi-halim.github.io/sales-report"
+  },
+  {
+    "name": "Sales Target",
+    "url": "https://budhi-halim.github.io/sales-target"
   }
 ]
