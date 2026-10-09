@@ -14,9 +14,9 @@ try {
     window.longTasks = [];
     new PerformanceObserver(list => window.longTasks.push(...list.getEntries().map(entry => ({ at: entry.startTime, duration: entry.duration })))).observe({ type: 'longtask', buffered: true });
   });
-  await page.goto('http://127.0.0.1:4173/pl-isi/');
+  await page.goto(`${process.env.ISI_PREVIEW_URL || 'http://127.0.0.1:4173'}/pl-isi/`);
   await page.locator('#workspace-content').waitFor({ state: 'visible', timeout: 60000 });
-  await page.waitForFunction(() => document.querySelectorAll('#productTable tbody tr').length === 6190, { timeout: 60000 });
+  await page.waitForFunction(() => document.querySelector('#productTable').closest('.isi-table-region').getAttribute('aria-busy') === 'false', { timeout: 60000 });
   const startup = await page.evaluate(() => ({ tasks: window.longTasks, elements: document.querySelectorAll('*').length }));
   await page.evaluate(() => { window.longTasks = []; });
   await cdp.send('Profiler.enable');

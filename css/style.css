@@ -1,6 +1,18 @@
-.launcher-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 13px; background: var(--isi-primary-soft); color: var(--isi-primary); }
-.launcher-icon svg { width: 27px; height: 27px; }
-.workspace-card-link { position: relative; gap: 12px; padding: 28px; }
-.workspace-card-link h2 { margin-top: 10px; }
-.workspace-card-link .card-arrow { position: absolute; inset: 28px 28px auto auto; }
-.workspace-main { max-width: 1250px; }
+.workspace-main { width: 100%; max-width: 1120px; }
+#appGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 8px; align-items: start; }
+.app-tile { min-width: 0; display: grid; justify-items: center; align-content: start; gap: 10px; padding: 8px 2px; border-radius: 16px; color: var(--isi-text); text-decoration: none; text-align: center; transition: background var(--isi-motion); }
+.launcher-icon { display: grid; place-items: center; width: clamp(54px, 14vw, 78px); aspect-ratio: 1; border: 1px solid color-mix(in oklch, var(--isi-primary) 18%, var(--isi-border)); border-radius: 25%; background: var(--isi-primary-soft); color: var(--isi-primary); box-shadow: 0 3px 9px color-mix(in oklch, var(--isi-text) 6%, transparent); transition: transform var(--isi-motion), background var(--isi-motion); }
+.launcher-icon svg { width: 49%; height: 49%; }
+.app-tile-label { max-width: 125px; font-size: .78rem; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.app-tile:focus-visible { outline: 2px solid var(--isi-primary); outline-offset: 3px; }
+.app-tile:active .launcher-icon { transform: scale(.95); }
+@media (hover: hover) {
+  .app-tile:hover { color: var(--isi-primary); background: var(--isi-subtle); }
+  .app-tile:hover .launcher-icon { transform: translateY(-3px); }
+}
+@media (min-width: 600px) {
+  #appGrid { grid-template-columns: repeat(auto-fill, minmax(125px, 1fr)); gap: 28px 14px; }
+  .app-tile { padding: 14px 6px; }
+  .app-tile-label { font-size: .86rem; }
+}
+@media (prefers-reduced-motion: reduce) { .app-tile, .launcher-icon { transition: none; } .app-tile:is(:hover, :active) .launcher-icon { transform: none; } }
