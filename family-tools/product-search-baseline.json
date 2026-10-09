@@ -1,0 +1,652 @@
+[
+  {
+    "query": "",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 6190,
+    "hash": "1c49f5a0eb1eac22cb81c9977a2b472171d02a515cd981b2802f40603c7b7307",
+    "invalid": false
+  },
+  {
+    "query": "",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 1539,
+    "hash": "e568743fb3b59599adcca698f61e076eaf7447d70b3f51c50d82805455826118",
+    "invalid": false
+  },
+  {
+    "query": "",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 1911,
+    "hash": "976af12aa3ba66c2271b13abc7f8ad8621fcab1b3363e6071ca517b122ab1d06",
+    "invalid": false
+  },
+  {
+    "query": "",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 2806,
+    "hash": "8693930322f7536c0196c96c0e00536882b80b4b5910eddb832627d981874ee2",
+    "invalid": false
+  },
+  {
+    "query": "",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 2806,
+    "hash": "8693930322f7536c0196c96c0e00536882b80b4b5910eddb832627d981874ee2",
+    "invalid": false
+  },
+  {
+    "query": "chicken",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 279,
+    "hash": "0bdc304ec0814ccfcd3750cc35b4a273a4d731a11c843cfe64c125349804e8b6",
+    "invalid": false
+  },
+  {
+    "query": "chicken",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 68,
+    "hash": "b55586438b46165640da3e3b6832eaa20fbba85859f2bf27cde917c90e0e7d5a",
+    "invalid": false
+  },
+  {
+    "query": "chicken",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 81,
+    "hash": "2987298e8024feac38dc56a3c29aa13e55fd34ba5d38e33111c00e8f65262d17",
+    "invalid": false
+  },
+  {
+    "query": "chicken",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 116,
+    "hash": "c443ba7fe3de5753b748f312baceeb513a88324593504fd47216d4d7604c3478",
+    "invalid": false
+  },
+  {
+    "query": "chicken",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 116,
+    "hash": "c443ba7fe3de5753b748f312baceeb513a88324593504fd47216d4d7604c3478",
+    "invalid": false
+  },
+  {
+    "query": "chicken or beef",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 408,
+    "hash": "0e8c8bd1079dd90d5fa7cdae19be1ecc84e830122c31a1a79f7ab5f16605c7aa",
+    "invalid": false
+  },
+  {
+    "query": "chicken or beef",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 95,
+    "hash": "a07be03dbad39734b766403a6bbe9d3925eaf71a53e5c3f86790603160527213",
+    "invalid": false
+  },
+  {
+    "query": "chicken or beef",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 116,
+    "hash": "ebf841322048e65679637d3c31766750b37e8db2c7287d5da86edd73e2f603a8",
+    "invalid": false
+  },
+  {
+    "query": "chicken or beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 177,
+    "hash": "29d2bb2a578937b37b560ec2ecde772cfa785b61f8e7c120135ebab3101ea2d2",
+    "invalid": false
+  },
+  {
+    "query": "chicken or beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 177,
+    "hash": "29d2bb2a578937b37b560ec2ecde772cfa785b61f8e7c120135ebab3101ea2d2",
+    "invalid": false
+  },
+  {
+    "query": "chicken not beef",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 279,
+    "hash": "0bdc304ec0814ccfcd3750cc35b4a273a4d731a11c843cfe64c125349804e8b6",
+    "invalid": false
+  },
+  {
+    "query": "chicken not beef",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 68,
+    "hash": "b55586438b46165640da3e3b6832eaa20fbba85859f2bf27cde917c90e0e7d5a",
+    "invalid": false
+  },
+  {
+    "query": "chicken not beef",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 81,
+    "hash": "2987298e8024feac38dc56a3c29aa13e55fd34ba5d38e33111c00e8f65262d17",
+    "invalid": false
+  },
+  {
+    "query": "chicken not beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 116,
+    "hash": "c443ba7fe3de5753b748f312baceeb513a88324593504fd47216d4d7604c3478",
+    "invalid": false
+  },
+  {
+    "query": "chicken not beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 116,
+    "hash": "c443ba7fe3de5753b748f312baceeb513a88324593504fd47216d4d7604c3478",
+    "invalid": false
+  },
+  {
+    "query": "(chicken or beef) and powder",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 105,
+    "hash": "c0ca09bc69fb05ade59c85a501617ad7a2afc7105c2825e89dd5b58d4e9c6faf",
+    "invalid": false
+  },
+  {
+    "query": "(chicken or beef) and powder",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 25,
+    "hash": "02d4cd127f5bb503f59440c6d0bb3f51f2db10a38081488fb4a5a7ea104eeea5",
+    "invalid": false
+  },
+  {
+    "query": "(chicken or beef) and powder",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 31,
+    "hash": "da1e48d4e7908327faacc6ecca8f8a47a11e5e87c8b4c719486a297ac9d3321b",
+    "invalid": false
+  },
+  {
+    "query": "(chicken or beef) and powder",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 54,
+    "hash": "4dbf2135f52060ba9ed780bb664453ca859ba604c1f9f6ee74aee7bd2d1300de",
+    "invalid": false
+  },
+  {
+    "query": "(chicken or beef) and powder",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 54,
+    "hash": "4dbf2135f52060ba9ed780bb664453ca859ba604c1f9f6ee74aee7bd2d1300de",
+    "invalid": false
+  },
+  {
+    "query": "chicken, beef",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 408,
+    "hash": "0e8c8bd1079dd90d5fa7cdae19be1ecc84e830122c31a1a79f7ab5f16605c7aa",
+    "invalid": false
+  },
+  {
+    "query": "chicken, beef",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 95,
+    "hash": "a07be03dbad39734b766403a6bbe9d3925eaf71a53e5c3f86790603160527213",
+    "invalid": false
+  },
+  {
+    "query": "chicken, beef",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 116,
+    "hash": "ebf841322048e65679637d3c31766750b37e8db2c7287d5da86edd73e2f603a8",
+    "invalid": false
+  },
+  {
+    "query": "chicken, beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 177,
+    "hash": "29d2bb2a578937b37b560ec2ecde772cfa785b61f8e7c120135ebab3101ea2d2",
+    "invalid": false
+  },
+  {
+    "query": "chicken, beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 177,
+    "hash": "29d2bb2a578937b37b560ec2ecde772cfa785b61f8e7c120135ebab3101ea2d2",
+    "invalid": false
+  },
+  {
+    "query": "#e",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 31,
+    "hash": "e3f5fe18bb5bd1c6f212a3bd0f0a49ccbd710bc66d55a20249b2e179c925c8f6",
+    "invalid": false
+  },
+  {
+    "query": "#e",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 29,
+    "hash": "afcf772e5d4546cbc3905894647628e504fa7f48c6e5d9bcafc9727802f620e9",
+    "invalid": false
+  },
+  {
+    "query": "#e",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 31,
+    "hash": "e3f5fe18bb5bd1c6f212a3bd0f0a49ccbd710bc66d55a20249b2e179c925c8f6",
+    "invalid": false
+  },
+  {
+    "query": "#e",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 31,
+    "hash": "e3f5fe18bb5bd1c6f212a3bd0f0a49ccbd710bc66d55a20249b2e179c925c8f6",
+    "invalid": false
+  },
+  {
+    "query": "#e",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 31,
+    "hash": "e3f5fe18bb5bd1c6f212a3bd0f0a49ccbd710bc66d55a20249b2e179c925c8f6",
+    "invalid": false
+  },
+  {
+    "query": "#g",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 244,
+    "hash": "937d3daf8801402828f3b3bf26b563f4cd2a45081b8b165d4b55f612830b689c",
+    "invalid": false
+  },
+  {
+    "query": "#g",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 134,
+    "hash": "dd2563db4c7f736710beaa73773f65b6f38ddca0ef421825e5ae98e38c331416",
+    "invalid": false
+  },
+  {
+    "query": "#g",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 164,
+    "hash": "b97c1d80567a1ea4ba7d486eee2547b0786e55ddde52530592b06fc9acf69160",
+    "invalid": false
+  },
+  {
+    "query": "#g",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 243,
+    "hash": "e8c406dc51de13b79e03fe6f10bbea08efaa6b5618b542bbb677e706bc2fa072",
+    "invalid": false
+  },
+  {
+    "query": "#g",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 243,
+    "hash": "e8c406dc51de13b79e03fe6f10bbea08efaa6b5618b542bbb677e706bc2fa072",
+    "invalid": false
+  },
+  {
+    "query": "#m",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 12,
+    "hash": "824d9b2d659786d0c17b2ae5c568b3b701aec27e9e16365011c517e0eff1f3d6",
+    "invalid": false
+  },
+  {
+    "query": "#m",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 12,
+    "hash": "824d9b2d659786d0c17b2ae5c568b3b701aec27e9e16365011c517e0eff1f3d6",
+    "invalid": false
+  },
+  {
+    "query": "#m",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 12,
+    "hash": "824d9b2d659786d0c17b2ae5c568b3b701aec27e9e16365011c517e0eff1f3d6",
+    "invalid": false
+  },
+  {
+    "query": "#m",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 12,
+    "hash": "824d9b2d659786d0c17b2ae5c568b3b701aec27e9e16365011c517e0eff1f3d6",
+    "invalid": false
+  },
+  {
+    "query": "#m",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 12,
+    "hash": "824d9b2d659786d0c17b2ae5c568b3b701aec27e9e16365011c517e0eff1f3d6",
+    "invalid": false
+  },
+  {
+    "query": "#e #g",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 10,
+    "hash": "f177a3bc738a9b4287ddfb628dedd21cb6b0928eaa13eed377f485eee46684c6",
+    "invalid": false
+  },
+  {
+    "query": "#e #g",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 9,
+    "hash": "bca540f46915648de4fdd8ae56ac240fcb93a6e2629b808b282605d3d472831e",
+    "invalid": false
+  },
+  {
+    "query": "#e #g",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 10,
+    "hash": "f177a3bc738a9b4287ddfb628dedd21cb6b0928eaa13eed377f485eee46684c6",
+    "invalid": false
+  },
+  {
+    "query": "#e #g",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 10,
+    "hash": "f177a3bc738a9b4287ddfb628dedd21cb6b0928eaa13eed377f485eee46684c6",
+    "invalid": false
+  },
+  {
+    "query": "#e #g",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 10,
+    "hash": "f177a3bc738a9b4287ddfb628dedd21cb6b0928eaa13eed377f485eee46684c6",
+    "invalid": false
+  },
+  {
+    "query": "#unknown",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "#unknown",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "#unknown",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "#unknown",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "#unknown",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "(chicken",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "(chicken",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "(chicken",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "(chicken",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "(chicken",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 0,
+    "hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "invalid": true
+  },
+  {
+    "query": "chicken and not beef",
+    "enablePrice": false,
+    "minimum": "",
+    "maximum": "",
+    "rate": 16000,
+    "count": 279,
+    "hash": "0bdc304ec0814ccfcd3750cc35b4a273a4d731a11c843cfe64c125349804e8b6",
+    "invalid": false
+  },
+  {
+    "query": "chicken and not beef",
+    "enablePrice": true,
+    "minimum": "2",
+    "maximum": "5",
+    "rate": 16000,
+    "count": 68,
+    "hash": "b55586438b46165640da3e3b6832eaa20fbba85859f2bf27cde917c90e0e7d5a",
+    "invalid": false
+  },
+  {
+    "query": "chicken and not beef",
+    "enablePrice": true,
+    "minimum": "30000",
+    "maximum": "100000",
+    "rate": 16000,
+    "count": 81,
+    "hash": "2987298e8024feac38dc56a3c29aa13e55fd34ba5d38e33111c00e8f65262d17",
+    "invalid": false
+  },
+  {
+    "query": "chicken and not beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "0",
+    "rate": 16000,
+    "count": 116,
+    "hash": "c443ba7fe3de5753b748f312baceeb513a88324593504fd47216d4d7604c3478",
+    "invalid": false
+  },
+  {
+    "query": "chicken and not beef",
+    "enablePrice": true,
+    "minimum": "",
+    "maximum": "",
+    "rate": null,
+    "count": 116,
+    "hash": "c443ba7fe3de5753b748f312baceeb513a88324593504fd47216d4d7604c3478",
+    "invalid": false
+  }
+]

@@ -13,19 +13,23 @@
   },
   {
     "name": "Exchange Rate",
-    "url": "https://budhi-halim.github.io/exchange-rate/data/today.json"
+    "url": "https://budhi-halim.github.io/exchange-rate/"
   },
   {
     "name": "Sample Request",
-    "url": "https://budhi-halim.github.io/general-database/data/sample_requests.json"
+    "url": "https://budhi-halim.github.io/general-database/sample-requests.html"
   },
   {
     "name": "Stock Request",
-    "url": "https://budhi-halim.github.io/general-database/data/stock_requests.json"
+    "url": "https://budhi-halim.github.io/general-database/stock-requests.html"
   },
   {
     "name": "Sales Order",
-    "url": "https://budhi-halim.github.io/general-database/data/sales_orders.json"
+    "url": "https://budhi-halim.github.io/general-database/sales-orders.html"
+  },
+  {
+    "name": "Technical Information",
+    "url": "https://budhi-halim.github.io/general-database/technical-information.html"
   },
   {
     "name": "Sales Report",
@@ -34,5 +38,9 @@
   {
     "name": "Sales Target",
     "url": "https://budhi-halim.github.io/sales-target"
+  },
+  {
+    "name": "Browser Extension",
+    "url": "https://budhi-halim.github.io/isi-ext/"
   }
 ]

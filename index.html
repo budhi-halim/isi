@@ -1,30 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="isi-theme" data-theme="system">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Islandsun Apps</title>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Islandsun Apps · Islandsun</title>
+  <link rel="icon" href="family/assets/icons/favicon.ico">
+  <link rel="stylesheet" href="family/css/tokens.css">
+  <link rel="stylesheet" href="family/css/components.css">
+  <link rel="stylesheet" href="family/css/interaction.css">
+  <link rel="stylesheet" href="family/css/workspace.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="family/js/navigation.js"></script>
+  <script type="module" src="js/script.js"></script>
+
 </head>
-<body>
-  <header>
-    <h1>Apps</h1>
-    <div class="darkmode-toggle">
-      <label class="switch" title="Toggle dark mode">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider"></span>
-      </label>
-      <span class="toggle-label">Dark Mode</span>
+<body class="isi-ui isi-workspace" data-family-app data-family-launcher="isi">
+  <header class="isi-header">
+    <div class="isi-brand"><img src="family/assets/icons/family.svg" alt=""><span>Islandsun Apps<small>ISLANDSUN INDONESIA</small></span></div>
+    <div class="isi-header-actions">
+
+      <button type="button" id="theme-toggle" class="isi-button isi-button--icon isi-theme-toggle" aria-label="Switch color scheme"></button>
     </div>
   </header>
-
-  <div class="container app-container">
-    <main>
-      <section id="appGrid" class="app-grid" aria-label="Application grid"></section>
-    </main>
-  </div>
-
-  <script src="js/script.js"></script>
+  <main class="workspace-main">
+    <div class="workspace-title"><h1>Your workspace</h1></div>
+    <p id="launcher-status" class="isi-muted" role="status">Loading apps…</p><button id="launcher-retry" class="isi-button" type="button" hidden>Try again</button>
+    <nav id="appGrid" class="workspace-grid" aria-label="Applications"></nav></main>
 </body>
 </html>

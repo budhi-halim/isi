@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="isi-theme">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Islandsun family components</title>
+  <link rel="icon" href="../family/assets/icons/family.svg">
+  <link rel="stylesheet" href="../family/css/tokens.css">
+  <link rel="stylesheet" href="../family/css/components.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="review.js"></script>
+  <link rel="stylesheet" href="../family/css/interaction.css">
+  <script type="module" src="../family/js/navigation.js"></script>
+</head>
+<body class="isi-ui" data-family-app>
+  <header class="isi-header"><a class="isi-brand" href="../../isi-share/" data-family-home><img src="../family/assets/icons/family.svg" alt="" width="40" height="40"><span>Islandsun<small>Design A · Family foundation 1.1.0</small></span></a><button type="button" id="theme-toggle" class="isi-button isi-button--icon isi-theme-toggle" aria-label="Switch color scheme"></button></header>
+  <main>
+    <p class="isi-eyebrow">COMPONENT REVIEW</p><h1>One family. Familiar controls.</h1><p class="isi-muted introduction">Approved Design A. Each page starts with the system theme; the toggle changes only the current page.</p>
+    <section class="isi-card"><div class="isi-section-heading"><h2>Family identity</h2><span class="isi-badge">SVG masters + PNG sizes</span></div><div class="identity-grid">
+      <figure><img src="../family/assets/icons/family.svg" width="80" height="80" alt="Islandsun family logo"><figcaption>Islandsun family</figcaption><div class="icon-sizes"><img src="../family/assets/icons/family-16.png" width="16" height="16" alt="16 pixels"><img src="../family/assets/icons/family-32.png" width="32" height="32" alt="32 pixels"><img src="../family/assets/icons/family-48.png" width="48" height="48" alt="48 pixels"></div></figure>
+      <figure><img src="../family/assets/icons/revenue.svg" width="80" height="80" alt="Revenue logo"><figcaption>Revenue Extractor</figcaption><div class="icon-sizes"><img src="../family/assets/icons/revenue-16.png" width="16" height="16" alt="16 pixels"><img src="../family/assets/icons/revenue-32.png" width="32" height="32" alt="32 pixels"><img src="../family/assets/icons/revenue-48.png" width="48" height="48" alt="48 pixels"></div></figure>
+      <figure><img src="../family/assets/icons/feedback.svg" width="80" height="80" alt="Feedback logo"><figcaption>AutoFeedback</figcaption><div class="icon-sizes"><img src="../family/assets/icons/feedback-16.png" width="16" height="16" alt="16 pixels"><img src="../family/assets/icons/feedback-32.png" width="32" height="32" alt="32 pixels"><img src="../family/assets/icons/feedback-48.png" width="48" height="48" alt="48 pixels"></div></figure>
+    </div></section>
+    <section class="isi-card"><div class="isi-section-heading"><h2>Forms and actions</h2><button class="isi-button" type="button" id="show-dialog">Open dialog</button></div><div class="field-grid"><label>Customer<input placeholder="Customer name" autocomplete="organization"></label><label>Category<select><option>All categories</option><option>Food ingredients</option></select></label><label>Quantity<input type="number" placeholder="0" min="0"></label><label>Unavailable<input disabled value="Loading data…"></label></div><fieldset><legend>Request type</legend><div class="isi-choices"><label><input type="radio" name="request-type" checked>New customer</label><label><input type="radio" name="request-type">Old customer</label></div></fieldset><label class="isi-file">Select workbooks<input type="file" accept=".xls,.xlsx" multiple></label><details class="isi-help"><summary>Which files can I use?</summary><p>Choose an Excel workbook. This review does not process or upload files.</p></details><div class="actions"><button type="button" class="isi-button isi-button--primary" id="show-success">Show success</button><button type="button" class="isi-button" id="show-error">Show error</button><button class="isi-button" type="button" disabled>Processing…</button></div></section>
+    <section class="isi-card"><div class="isi-section-heading"><h2>Data and status</h2><span class="isi-badge" data-tone="success">Ready</span></div><div class="isi-filter-bar"><label>Search<input type="search" id="sample-search" placeholder="Search sample records"></label><label>Status<select id="sample-status"><option value="">All statuses</option><option>Approved</option><option>Pending</option></select></label></div><div class="isi-table-region" tabindex="0" aria-label="Sample records"><table class="isi-table"><thead><tr><th>Reference</th><th>Customer</th><th>Status</th></tr></thead><tbody id="sample-rows"></tbody></table></div><div id="sample-empty" class="isi-empty" hidden>No matching records.</div><ol class="isi-stepper" aria-label="Sample workflow"><li data-state="complete">Delivery records</li><li aria-current="step">Sales data</li></ol><progress class="isi-progress" value="65" max="100" aria-label="Sample progress"></progress><details class="isi-disclosure"><summary>Activity log</summary><pre class="isi-log">Delivery scan completed.
+Matching sample sales orders…</pre></details></section>
+    <section class="isi-card"><div class="isi-section-heading"><h2>Shared startup experience</h2><button id="restart-loading" type="button" class="isi-button">Replay loading</button></div><p class="isi-muted">The same component is reserved for Product List, Sales Report, and Sales Target. Search remains unavailable until data and rendering are ready.</p><div id="loading-host"></div><div id="loaded-content" hidden><p class="isi-notice">Workspace ready. Controls are now available.</p><label>Search<input id="loaded-search" type="search" placeholder="Search loaded records"></label></div></section>
+    <div class="actions"><a class="isi-button isi-button--primary" href="../../pricing-form/">Open Pricing Form →</a><button type="button" class="isi-button" data-tooltip="Use Tab to focus controls, Enter to activate, and Escape to close dialogs or tooltips.">Keyboard help</button></div>
+  </main>
+  <dialog class="isi-dialog" id="sample-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">Review complete</h2><p class="isi-muted">Native dialog focus and Escape behavior remain available.</p><form method="dialog"><button class="isi-button isi-button--primary">Close</button></form></dialog>
+  <div class="isi-toasts" id="notifications"></div>
+</body>
+</html>

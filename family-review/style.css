@@ -1,0 +1,15 @@
+body { margin: 0; background: var(--isi-background); }
+main { max-width: 1100px; padding: 36px 20px 60px; margin: auto; }
+main > section { margin-block: 24px; }
+.introduction { margin-top: 12px !important; }
+.identity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.identity-grid figure { display: grid; justify-items: center; gap: 16px; background: var(--isi-subtle); border-radius: var(--isi-control-radius); padding: 24px; }
+.identity-grid figcaption { font-size: .85rem; }
+.icon-sizes { display: flex; gap: 14px; align-items: center; }
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.isi-file, .isi-help, .isi-disclosure { margin-top: 24px; }
+#sample-dialog p { margin-block: 18px; }
+#loaded-content { padding-block: 24px; }
+#loaded-content label { margin-top: 20px; }
+@media (max-width: 650px) { .identity-grid, .field-grid { grid-template-columns: 1fr; } }

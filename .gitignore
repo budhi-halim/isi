@@ -14,3 +14,31 @@
 # GitHub configs
 !.gitignore
 !.github/
+# Shared family assets
+!/assets/
+!/assets/family/
+!/assets/family/**
+
+# Canonical design foundation and local tooling
+!/family/
+!/family/**
+!/family-tools/
+!/family-tools/**
+!/family-review/
+!/family-review/*.html
+!/family-review/*.css
+!/family-review/*.js
+
+# Local verification artifacts
+/family-tools/evidence/
+/family-tools/*.md
+!/family-tools/DESIGN.md
+/family-tools/__pycache__/
+/family-tools/site-build/node_modules/
+/dist/
+
+!/site-build.json
+!/.github/
+!/.github/workflows/
+!/.github/workflows/pages.yml
+/.site-build-*/
