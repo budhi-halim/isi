@@ -7,7 +7,6 @@ const require = createRequire(import.meta.url);
 const playwrightPath = process.env.PLAYWRIGHT_PATH || 'C:/Users/halim/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright';
 const { chromium } = require(playwrightPath);
 const { expect } = require(`${playwrightPath}/test`);
-const baseline = process.argv.includes('--baseline');
 const base = process.env.ISI_PREVIEW_URL || 'http://127.0.0.1:4173';
 const evidence = new URL('./evidence/product-scroll/', import.meta.url);
 await mkdir(evidence, { recursive: true });
@@ -32,7 +31,15 @@ for (const mobile of [true, false]) {
     if (mobile) await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
     await page.route('**/exchange-rate/data/today.json', route => route.fulfill({ json: { tt_counter_selling_rate_buffered: 18500 } }));
     await page.addInitScript(() => {
-      window.scrollTrace = { calls: [], tasks: [], events: [] };
+      window.scrollTrace = { calls: [], tasks: [], events: [], frames: [] };
+      let motionFrame = 0;
+      const measureMotion = at => {
+        motionFrame = 0;
+        const start = window.scrollTrace.events.find(event => event.type === 'pointerup');
+        if (!start) return;
+        window.scrollTrace.frames.push({ at, y: scrollY });
+        if (at - start.at < 4000 && scrollY > 0) motionFrame = requestAnimationFrame(measureMotion);
+      };
       const scrollTo = window.scrollTo.bind(window);
       window.scrollTo = (...args) => {
         const at = performance.now(); scrollTo(...args);
@@ -45,7 +52,13 @@ for (const mobile of [true, false]) {
       };
       new PerformanceObserver(list => window.scrollTrace.tasks.push(...list.getEntries().map(entry => ({ at: entry.startTime, duration: entry.duration })))).observe({ type: 'longtask' });
       for (const type of ['pointerdown', 'pointerup', 'pointercancel', 'click']) document.addEventListener(type, event => {
-        if (event.target.closest('.workspace-back-top')) window.scrollTrace.events.push({ type, at: performance.now(), y: scrollY, pointerType: event.pointerType });
+        if (event.target.closest('.workspace-back-top')) {
+          window.scrollTrace.events.push({ type, at: performance.now(), y: scrollY, pointerType: event.pointerType });
+          if (type === 'pointerup') {
+            cancelAnimationFrame(motionFrame);
+            motionFrame = requestAnimationFrame(measureMotion);
+          }
+        }
       }, true);
     });
     await page.goto(`${base}/pl-isi/`);
@@ -53,6 +66,7 @@ for (const mobile of [true, false]) {
     console.log(`${mobile ? 'mobile' : 'desktop'}: loaded`);
     const count = await page.locator('#productTable tbody tr').count();
     assert.ok(count > 6000);
+    await expect(page.locator('.isi-table-region')).toHaveAttribute('aria-busy', 'false');
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     const control = page.locator('.workspace-back-top');
     for (const mode of ['settled', 'moving']) {
@@ -62,7 +76,7 @@ for (const mobile of [true, false]) {
       await page.waitForTimeout(280);
       console.log(`${mobile ? 'mobile' : 'desktop'}: ${mode} position ready`);
       const box = await control.boundingBox();
-      await page.evaluate(() => { window.scrollTrace = { calls: [], tasks: [], events: [] }; });
+      await page.evaluate(() => { window.scrollTrace = { calls: [], tasks: [], events: [], frames: [] }; });
       if (mode === 'moving') {
         await page.evaluate(async () => {
           window.scrollBy({ top: 50000, behavior: 'smooth' });
@@ -78,21 +92,25 @@ for (const mobile of [true, false]) {
       });
       const result = await page.evaluate(() => ({ ...window.scrollTrace, y: scrollY, focused: document.activeElement?.id, elapsed: performance.now() - window.scrollTrace.events[0]?.at }));
       result.mobile = mobile; result.mode = mode;
+      const released = result.events.find(event => event.type === 'pointerup');
+      const intermediate = result.frames.filter(frame => frame.y > 1 && frame.y < released.y - 2);
+      result.firstMovement = intermediate[0]?.at - released.at;
+      result.intermediateFrames = intermediate.length;
       results.push(result);
-      await writeFile(new URL(`${baseline ? 'before' : 'after'}.json`, evidence), JSON.stringify(results, null, 2));
-      console.log(JSON.stringify(result));
-      if (!baseline) {
-        assert.equal(result.focused === 'searchInput', false, 'Pointer activation must not focus the search field');
-        if (mobile) {
-          if (mode === 'moving') assert.ok(result.events[0].y < 230000, 'Tap must arrive before the previous scroll finishes');
-          assert.ok(result.calls.every(call => call.type !== 'scrollTo' || call.args[0]?.behavior === 'instant'), 'Touch must cancel scrolling without traversing the full table');
-          assert.ok(result.elapsed < 2500, `Touch return took ${result.elapsed}ms`);
-          await page.waitForTimeout(120);
-          assert.equal(await page.evaluate(() => scrollY), 0, 'A residual frame must not displace the completed return');
-        }
+      await writeFile(new URL('smooth-after.json', evidence), JSON.stringify(results, null, 2));
+      console.log(JSON.stringify({ mobile, mode, elapsed: result.elapsed, firstMovement: result.firstMovement, intermediateFrames: result.intermediateFrames, longTasks: result.tasks.length }));
+      assert.equal(result.focused === 'searchInput', false, 'Pointer activation must not focus the search field');
+      assert.ok(result.calls.some(call => call.type === 'scrollTo' && call.args[0]?.behavior === 'smooth'), 'Normal motion must use native smooth scrolling');
+      assert.ok(result.intermediateFrames >= 8, 'The return must visibly animate through intermediate positions');
+      assert.ok(result.firstMovement >= 0 && result.firstMovement < 300, `Smooth movement must begin promptly (${result.firstMovement}ms)`);
+      if (mobile) {
+        if (mode === 'moving') assert.ok(result.events[0].y < 230000, 'Tap must arrive before the previous scroll finishes');
+        assert.ok(result.elapsed < 3000, `Touch return took ${result.elapsed}ms`);
+        await page.waitForTimeout(120);
+        assert.equal(await page.evaluate(() => scrollY), 0, 'A residual frame must not displace the completed return');
       }
     }
-    if (!baseline && mobile) {
+    if (mobile) {
       await page.evaluate(() => window.scrollTo({ top: 12000, behavior: 'instant' }));
       await expect.poll(() => control.getAttribute('data-state')).toBe('visible').catch(async error => {
         console.log(JSON.stringify(await page.evaluate(() => ({ ...window.scrollTrace, y: scrollY, height: document.documentElement.scrollHeight }))));
@@ -130,9 +148,31 @@ for (const mobile of [true, false]) {
       });
       assert.equal(newInputY, 1200, 'Return finalization must yield to a new scroll gesture');
       results.push({ mobile, newInputCancelsFinalization: true });
+      await page.evaluate(() => scrollTo({ top: 180000, behavior: 'instant' }));
+      await expect.poll(() => control.getAttribute('data-state')).toBe('visible');
+      await page.waitForTimeout(250);
+      const repeatedBox = await control.boundingBox();
+      const repeatedX = repeatedBox.x + repeatedBox.width / 2, repeatedY = repeatedBox.y + repeatedBox.height / 2;
+      await touchWithTimeout(page, repeatedX, repeatedY);
+      await page.waitForTimeout(80);
+      assert.ok(await page.evaluate(() => scrollY > innerHeight), 'Second tap must occur during the return animation');
+      await touchWithTimeout(page, repeatedX, repeatedY);
+      await expect.poll(() => page.evaluate(() => scrollY), { timeout: 4000 }).toBeLessThan(2);
+      results.push({ mobile, repeatedTapDuringAnimation: true });
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.evaluate(() => scrollTo({ top: 12000, behavior: 'instant' }));
+      await expect.poll(() => control.getAttribute('data-state')).toBe('visible');
+      await page.waitForTimeout(250);
+      const reducedBox = await control.boundingBox();
+      await page.evaluate(() => { window.scrollTrace = { calls: [], tasks: [], events: [], frames: [] }; });
+      await touchWithTimeout(page, reducedBox.x + reducedBox.width / 2, reducedBox.y + reducedBox.height / 2);
+      await expect.poll(() => page.evaluate(() => scrollY)).toBeLessThan(2);
+      assert.equal(await page.evaluate(() => scrollTrace.calls.some(call => call.type === 'scrollTo' && call.args[0]?.behavior === 'smooth')), false, 'Reduced motion must skip the animation');
+      results.push({ mobile, reducedMotion: true });
+      await page.emulateMedia({ reducedMotion: 'no-preference' });
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
     }
-    if (!baseline && !mobile) {
+    if (!mobile) {
       for (const reducedMotion of ['no-preference', 'reduce']) {
         await page.emulateMedia({ reducedMotion });
         await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo({ top: 12000, behavior: 'instant' }); });
@@ -151,13 +191,13 @@ for (const mobile of [true, false]) {
         await row.locator('.product-name').tap();
         await expect(page.locator('#production-popup')).toBeVisible();
         const colors = await row.evaluate(node => ({ background: getComputedStyle(node).backgroundColor, highlight: getComputedStyle(node).webkitTapHighlightColor }));
-        if (!baseline) assert.deepEqual(colors, { background: 'rgba(0, 0, 0, 0)', highlight: 'rgba(0, 0, 0, 0)' });
+        assert.deepEqual(colors, { background: 'rgba(0, 0, 0, 0)', highlight: 'rgba(0, 0, 0, 0)' });
         results.push({ mobile, colorScheme, rowColors: colors });
-        await page.screenshot({ path: fileURLToPath(new URL(`${baseline ? 'before' : 'after'}-tap-${colorScheme}.png`, evidence)) });
+        await page.screenshot({ path: fileURLToPath(new URL(`smooth-after-tap-${colorScheme}.png`, evidence)) });
         await page.locator('h1').tap();
       }
     }
   } finally { await browser.close(); }
 }
-await writeFile(new URL(`${baseline ? 'before' : 'after'}.json`, evidence), JSON.stringify(results, null, 2));
-console.log(`${baseline ? 'BASELINE' : 'PASS'} stationary/moving return, touch fling, gesture cancellation, keyboard/reduced motion, and light/dark popup colors`);
+await writeFile(new URL('smooth-after.json', evidence), JSON.stringify(results, null, 2));
+console.log('PASS smooth stationary/moving return, touch fling, gesture cancellation, keyboard/reduced motion, and light/dark popup colors');
