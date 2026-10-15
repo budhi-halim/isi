@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-const version = '1.3.10';
+const version = '1.3.11';
 const source = path.resolve(fileURLToPath(new URL('../family/', import.meta.url)));
 const workspace = path.dirname(path.dirname(source));
 const targets = ['isi-share', 'pricing-form', 'price', 'pl-isi', 'sales-report', 'sales-target', 'general-database', 'exchange-rate', 'isi-ext/Islandsun-Revenue', 'isi-ext/IslandSun-AutoFeedback', 'isi-ext'];
